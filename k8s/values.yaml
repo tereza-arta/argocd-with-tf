@@ -1,0 +1,19 @@
+configs:
+  cm:
+    url: https://192.168.49.240
+
+    admin.enabled: false
+
+    dex.config: |
+      connectors:
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: $oauth-app-cred:client_id          //from k8s-secret
+            clientSecret: $oauth-app-cred:client_secret
+
+#Change <argocd-server> service type
+server:
+  service:
+    type: LoadBalancer
