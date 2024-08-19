@@ -1,6 +1,6 @@
 configs:
   cm:
-    url: https://192.168.49.240
+    url: https://<load-balancer-ip>
 
     admin.enabled: false
 
@@ -10,7 +10,7 @@ configs:
           id: github
           name: GitHub
           config:
-            clientID: $oauth-app-cred:client_id          //from k8s-secret
+            clientID: $oauth-app-cred:client_id
             clientSecret: $oauth-app-cred:client_secret
 
 #Change <argocd-server> service type
